@@ -10,7 +10,7 @@ const Header = () => {
     <article className="fullheight">
       <div className="hgroup">
         <h1>Landon Stadium</h1>
-        <h2>West Atlant</h2>
+        <h2>West Atlanta</h2>
         <p><a href="#welcome"><img src="https://landonhotel.com/images/misc/arrow.png" alt="down arrow" /></a></p>
       </div>
     </article>
