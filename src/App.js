@@ -1,26 +1,23 @@
-import logo from './logo.svg';
+import React from 'react';
+import Header from './components/Header';
+import Main from './components/main-components/Main';
+import Footer from './components/Footer';
 import './App.css';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload. 
-          Hello there!! this is a change.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends React.Component { 
+  render() {
+    //This page is to be edited.
+    //Change to describe landon field.
+    //change images.
+    // .....
+    return (
+      <div className="App">
+        <Header/>
+        <Main/>
+        <Footer/>
+      </div>
+    );
+  }
 }
 
 export default App;
