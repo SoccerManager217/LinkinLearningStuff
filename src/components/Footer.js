@@ -1,4 +1,5 @@
 import React from 'react';
+import footerLinks from './data/footer-links.json';
 
 const Footer = () => {
     return(
@@ -6,9 +7,11 @@ const Footer = () => {
         <article className="content">
           <div id="socialmedia">
             <ul className="group">
-              <li><a href="https://twitter.com"><img className="icon" src="https://landonhotel.com/images/socialmedia/twitter.png" alt="icon for twitter" /></a></li>
-              <li><a href="http://www.facebook.com"><img className="icon" src="https://landonhotel.com/images/socialmedia/facebook.png" alt="icon for facebook" /></a></li>
-              <li><a href="http://www.youtube.com"><img className="icon" src="https://landonhotel.com/images/socialmedia/youtube.png" alt="icon for youtube" /></a></li>    
+            {
+              footerLinks.map((link) =>               
+                <li><a href={ link.href }><img className="icon" src={ link.src } alt= {`icon for ${link.alt}`} /></a></li>
+              )
+            }  
             </ul>      
           </div>
         </article>
