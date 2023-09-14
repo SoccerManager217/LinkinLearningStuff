@@ -1,6 +1,6 @@
 import React from "react";
 import ArivalInfo from '../data/arrival-info.json';
-import ServiceLink from '../data/services-link.json';
+import ServiceLink from '../data/services-list.json';
 import AccessLink from'../data/accessibility.json';
 const Info = () => {
     return (

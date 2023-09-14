@@ -1,5 +1,5 @@
 import React from 'react';
-import Gallery from '../data/gallery-welcomeimg.json';
+import Gallery from '../data/gallery-images.json';
 
 const Welcome = () => {
     return(
@@ -8,10 +8,9 @@ const Welcome = () => {
               <div className="gallery">
                 {
                   Gallery.map((link)=> 
-                  <img src={link.img} alt={link.alt} />)
+                  <img className={link.className} src={link.img} alt={link.alt} />)
                 }
-                <img className="hidesm" src="https://landonhotel.com/images/hotel/intro_wedding.jpg" alt="Intro Gallery Dining Sample Pictures" />
-              </div>
+                </div>
               <h1>Welcome to the Landon&nbsp;Field,   TODO: more edits on words and styling later.</h1>
               <p>The original Landon perseveres after 50 years in the heart of West London. The West End neighborhood has something for everyone—from theater to dining to historic sights. And the not-to-miss Rooftop Cafe is a great place for travelers and locals to engage over drinks, food, and good&nbsp;conversation. &nbsp;To learn more about the Landon Hotel in the West End, browse our website and <a href="files/landon_information_sheet_London.pdf">download our handy information sheet</a>.</p>
             </article>
