@@ -1,8 +1,26 @@
-import React from "react";
+import React, { useEffect,useState } from "react";
 import ArivalInfo from '../data/arrival-info.json';
-import ServiceLink from '../data/services-link.json';
-import AccessLink from'../data/accessibility.json';
+// import ServiceLink from '../data/services-list.json';
+// import AccessLink from'../data/accessibility.json';
 const Info = () => {
+    const [AccessLink,setAccessibility] = useState([]);
+    const [ServiceLink,setServiceLink] = useState([]);
+    const loadAccessibility = async () =>{
+      const url = "https://6torc7wbze.execute-api.us-east-1.amazonaws.com/Production/accessibility";
+      const resp = await fetch(url);
+      let jsonData =await resp.json();
+      setAccessibility(jsonData);
+    }
+    const loadServiceLink = async () => {
+      const url = "https://6torc7wbze.execute-api.us-east-1.amazonaws.com/Production/servicelist";
+      const resp = await fetch(url);
+      let jsonData =await resp.json();
+      setServiceLink(jsonData);
+    }
+    useEffect(()=> {
+      loadAccessibility();
+      loadServiceLink();
+    },[])
     return (
         <div className="scene" id="hotelinfo">
             <article className="heading">
