@@ -1,7 +1,21 @@
 import React from 'react';
-import Gallery from '../data/gallery-images.json';
+import { useEffect,useState } from 'react';
+// import Gallery from '../data/gallery-images.json';
 
 const Welcome = () => {
+    const [Gallery,setGalleryImages] = useState([]);
+    const loadGalleryImages = async () =>
+    {
+      const url = "https://6torc7wbze.execute-api.us-east-1.amazonaws.com/Production/galleryimages";
+      const response = await fetch(url);
+      let jsonResponse = await response.json();
+      setGalleryImages(jsonResponse);
+    }
+    useEffect(
+      () => {
+        loadGalleryImages();
+      },[]
+    )
     return(
         <div className="scene" id="welcome">
             <article className="content">

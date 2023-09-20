@@ -1,10 +1,31 @@
 //creating a function component. for header. 
 // (function component is stateless, it cannot maintain the info, or state of user.)
 
-import React from 'react';
-import menuLinksData from './data/menu-links.json';
+import React ,{ useState , useEffect} from 'react';
+//import menuLinksData from './data/menu-links.json';
 
+// s
 const Header = () => {
+    const [menuLinksData, setMenuLinksData] = useState([]);
+
+    const loadMenuLinksData = async() => 
+    {
+      //Query the API gateway //await will wait for the function to return something
+      //fetch will takes in an RequestInfo or an URL that will return a Promise<Respose>
+      // A promise is similar to Future is Java. use to get the value of async operations
+      const url = 'https://6torc7wbze.execute-api.us-east-1.amazonaws.com/Production/menulinks';
+      const resp = await fetch(url);
+      let jsonData = await resp.json();
+      //Assign response data to our state variable
+      setMenuLinksData(jsonData);
+    }
+
+    useEffect(() => {
+      //load the menu links data from the API Gateway
+      loadMenuLinksData();
+      //Other Side Effect
+    }, []);
+
     return(
     <header id="intro">
     <article className="fullheight">

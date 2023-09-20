@@ -1,7 +1,9 @@
 import React from 'react';
 import footerLinks from './data/footer-links.json';
 
+
 const Footer = () => {
+
     return(
         <footer className="scene">
         <article className="content">
